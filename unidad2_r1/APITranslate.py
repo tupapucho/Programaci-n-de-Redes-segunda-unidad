@@ -1,4 +1,5 @@
 '''
+ingrese llave: 1f71350e6dmsh8a8a1cb3f87e05cp167e02jsn1ad5190257b3
 Programa: Detección de Idioma con API de Google Translate a través de RapidAPI.
 Autor: Antonio Uribe Ramirez
 Fecha de Creación: 16/11/2023
