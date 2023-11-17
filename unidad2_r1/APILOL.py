@@ -2,6 +2,7 @@
 Programa: League of Legends Esports
 Autor: Antonio Uribe Ramirez
 Fecha de Creación: 16/11/2023
+INGRESE: t1 para probar la api
 Descripción:
 Este programa utiliza la API "league-of-legends-esports" a través de RapidAPI 
 para obtener información detallada sobre equipos y jugadores de League of Legends. 
