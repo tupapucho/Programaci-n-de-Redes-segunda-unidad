@@ -3,6 +3,7 @@ Programa: League of Legends Esports
 Autor: Antonio Uribe Ramirez
 Fecha de Creación: 16/11/2023
 INGRESE: t1 para probar la api
+KEY:1f71350e6dmsh8a8a1cb3f87e05cp167e02jsn1ad5190257b3
 Descripción:
 Este programa utiliza la API "league-of-legends-esports" a través de RapidAPI 
 para obtener información detallada sobre equipos y jugadores de League of Legends. 
@@ -32,11 +33,11 @@ La información del equipo se presentará de manera clara en la salida del progr
 import http.client
 import json
 
-def make_api_request(team_id):
+def make_api_request(team_id, api_key):
     conn = http.client.HTTPSConnection("league-of-legends-esports.p.rapidapi.com")
 
     headers = {
-        'X-RapidAPI-Key': "1f71350e6dmsh8a8a1cb3f87e05cp167e02jsn1ad5190257b3",
+        'X-RapidAPI-Key': api_key,
         'X-RapidAPI-Host': "league-of-legends-esports.p.rapidapi.com"
     }
 
@@ -59,6 +60,8 @@ def print_team_info(team_data):
         print(f"{player['summonerName']} ({player['role']})")
 
 def main():
+    api_key = input("Ingrese su clave de API: ").strip()
+
     while True:
         team_id = input("Ingrese el ID del equipo (o 'salir' para salir): ").strip()
 
@@ -70,7 +73,7 @@ def main():
             continue
 
         try:
-            result = make_api_request(team_id)
+            result = make_api_request(team_id, api_key)
             print("\nInformación del equipo:")
             print_team_info(result)
         except Exception as e:
