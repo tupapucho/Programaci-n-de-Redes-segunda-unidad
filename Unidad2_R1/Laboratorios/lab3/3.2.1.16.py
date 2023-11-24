@@ -1,3 +1,8 @@
+'''
+Autor: Antonio Uribe Ramirez
+lab: 3.2.1.16
+fecha: 22/11/10
+'''
 class QueueError(Exception):
     pass
 
