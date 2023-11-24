@@ -1,3 +1,8 @@
+'''
+Autor: Antonio Uribe Ramirez
+lab: 4.3.1.15
+fecha: 22/11/10
+'''
 def contar_letras(nombre_archivo):
     try:
         with open(nombre_archivo.lower(), 'r') as archivo:
