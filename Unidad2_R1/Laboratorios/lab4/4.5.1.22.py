@@ -1,3 +1,8 @@
+'''
+Autor: Antonio Uribe Ramirez
+lab: 4.5.1.22
+fecha: 22/11/10
+'''
 from datetime import datetime
 
 # Crear objeto datetime para el 4 de noviembre de 2020, 14:53:00
