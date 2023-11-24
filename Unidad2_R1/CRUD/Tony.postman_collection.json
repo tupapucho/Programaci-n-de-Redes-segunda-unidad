@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "00c68ebe-3bfa-4c03-a3ad-bc567640d440",
+		"name": "Tony",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30540104"
+	},
+	"item": [
+		{
+			"name": "Get peliculas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"apellido\": \"Arredondo\",\n        \"domicilio\": \"Calle 321, No. 321, Col. Esquina\",\n        \"edad\": 40,\n        \"fechaNacimiento\": \"1999-09-09\",\n        \"idPaciente\": 123,\n        \"nombre\": \"Manuel\",\n        \"sexo\": \"M\",\n        \"telefono\": \"666-123-123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/peliculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"peliculas"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Get actores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/actores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"actores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post peliculas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"codigo\": 1,\n        \"director\": \"Peter Jackson\",\n        \"duracion\": 255,\n        \"fecha_estreno\": \"2001-03-20\",\n        \"fecha_estreno_pais\": \"Estados Unidos, Mexico\",\n        \"genero\": \"Fantasía\",\n        \"ingresos\": 2999800000,\n        \"presupuesto\": 111000000,\n        \"sinopsis\": \"En la Tierra Media, un grupo de hobbits se embarcan en una peligrosa misión para destruir el Anillo Único, una poderosa arma creada por el Señor Oscuro Sauron.\",\n        \"titulo\": \"El señor de los anillos: La comunidad del anillo\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/peliculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"peliculas"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "post actores",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"apellido\": \"Dawson\",\n        \"codigo_pelicula\": 1,\n        \"fecha_nacimiento\": \"1981-01-28\",\n        \"id_actor\": 1,\n        \"nombre\": \"Elijah Wooden\",\n        \"pais_nacimiento\": \"Estados Unidos\",\n        \"papel\": \"Jack Dawson (la roca)\",\n        \"premios\": \"Nominación a los Premios Óscar a mejor actor de reparto y mejor director\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/actores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"actores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put peliculas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"codigo\": 4,\n        \"director\": \"Hermanos Ruso\",\n        \"duracion\": 160,\n        \"fecha_estreno\": \"2017-11-11\",\n        \"fecha_estreno_pais\": \"Mexico\",\n        \"genero\": \"Super heroes\",\n        \"ingresos\": 213678412,\n        \"presupuesto\": 9990000,\n        \"sinopsis\": \"El super heroe ironman se encuentra en peligro y se busca una forma de salvarlo\",\n        \"titulo\": \"IronMan 3\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/peliculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"peliculas"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "add actores",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"apellido\": \"mendiola\",\n        \"codigo_pelicula\": 2,\n        \"fecha_nacimiento\": \"2000-01-01\",\n        \"id_actor\": 7,\n        \"nombre\": \"Monchito\",\n        \"pais_nacimiento\": \"Mexico\",\n        \"papel\": \"Protagonista\",\n        \"premios\": \"Premio Óscar al mejor actor\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/actores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"actores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete peliculas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"codigo\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/peliculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"peliculas"
+					]
+				},
+				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "delete actores",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id_actor\": 7\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/actores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"actores"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
