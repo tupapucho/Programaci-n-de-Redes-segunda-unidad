@@ -1,3 +1,8 @@
+'''
+Autor: Antonio Uribe Ramirez
+lab: 4.3.1.17
+fecha: 22/11/10
+'''
 class StudentsDataException(Exception):
     pass
 
