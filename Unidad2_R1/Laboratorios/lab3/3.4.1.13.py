@@ -1,3 +1,8 @@
+'''
+Autor: Antonio Uribe Ramirez
+lab: 3.4.1.13
+fecha: 22/11/10
+'''
 class WeekDayError(Exception):
     pass
 
