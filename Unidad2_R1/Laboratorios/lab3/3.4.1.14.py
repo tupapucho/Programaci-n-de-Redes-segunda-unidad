@@ -1,3 +1,8 @@
+'''
+Autor: Antonio Uribe Ramirez
+lab: 3.4.1.14
+fecha: 22/11/10
+'''
 import math
 
 class Point:
