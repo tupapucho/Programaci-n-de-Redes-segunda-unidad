@@ -1,3 +1,8 @@
+'''
+Autor: Antonio Uribe Ramirez
+lab: 3.4.1.12
+fecha: 22/11/10
+'''
 class Timer:
     def __init__(self, hours=0, minutes=0, seconds=0):
         self.__hours, self.__minutes, self.__seconds = hours, minutes, seconds
