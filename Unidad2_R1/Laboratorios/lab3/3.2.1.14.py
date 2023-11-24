@@ -1,3 +1,8 @@
+'''
+Autor: Antonio Uribe Ramirez
+lab: 3.2.1.14
+fecha: 22/11/10
+'''
 class Stack:
     def __init__(self):
         self.__stk = []
